@@ -20,12 +20,7 @@ export default function Header() {
 	const { colorMode, toggleColorMode } = useColorMode()
 	const cols = useThemeColors()
 	return (
-		<HStack
-			as='nav'
-			alignItems='center'
-			paddingRight='4'
-			backgroundColor={cols.ReadingContrast}
-		>
+		<HStack as='nav' alignItems='center' paddingRight='4' backgroundColor={cols.head}>
 			<NextLink href='/' passHref>
 				<Link _hover={{ textDecoration: null }}>
 					<Box
@@ -40,7 +35,7 @@ export default function Header() {
 			</NextLink>
 			<NextLink href='/portfolio' passHref>
 				<Link _hover={{ textDecoration: null }}>
-					<VStack paddingLeft={'1rem'}>
+					<VStack paddingLeft={'1rem'} color={cols.white}>
 						<Divider variant={'solid'} orientation='horizontal' />
 						<Text>FULLSTACK</Text>
 						<Divider variant={'solid'} orientation='horizontal' />
@@ -55,7 +50,7 @@ export default function Header() {
 				isRound
 				padding={2.5}
 				backgroundColor={cols.black}
-				_hover={cols.lghthover}
+				_hover={{ backgroundColor: cols.lghthover }}
 				_active={{ backgroundColor: 'yellow.600' }}
 				size={'3xl'}
 				w={'4rem'}

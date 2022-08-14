@@ -23,11 +23,16 @@ export default function Footer() {
 					<Box>
 						<Tooltip label='Linkedin' bg={cols.black} color={cols.white}>
 							<Button
-								background={cols.softGray}
+								opacity={'50%'}
+								background={cols.button}
 								h={butht}
 								w={butwid}
 								_hover={{
 									backgroundColor: cols.black,
+									opacity: '100%',
+								}}
+								_active={{
+									backgroundColor: cols.on,
 								}}
 								as={Link}
 								href='https://www.linkedin.com/in/hannah-bee-2b36aa246/'
@@ -42,11 +47,16 @@ export default function Footer() {
 					<Box>
 						<Tooltip label='Github' bg={cols.black} color={cols.white}>
 							<Button
-								background={cols.softGray}
+								opacity={'50%'}
+								background={cols.button}
 								h={butht}
 								w={butwid}
+								_active={{
+									backgroundColor: cols.on,
+								}}
 								_hover={{
 									backgroundColor: cols.black,
+									opacity: '100%',
 								}}
 								as={Link}
 								href='https://github.com/HannahBeattie'
@@ -69,7 +79,7 @@ export default function Footer() {
 						</Tooltip>
 					</Box>
 					<Spacer />
-					<Text fontSize={'12px'} color={cols.white}>
+					<Text fontSize={'12px'} color={cols.white} opacity={'50%'}>
 						Ⓒ HannahBee all rights reserved
 					</Text>
 				</HStack>

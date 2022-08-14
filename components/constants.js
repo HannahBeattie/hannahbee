@@ -5,10 +5,12 @@ export function useThemeColors() {
 		black: 'black',
 		white: 'white',
 		darkhover: { color: 'cyan.600' },
-		lghthover: { backgroundColor: 'purple.900' },
+		lghthover: 'purple.900',
 		chiaroscuro: useColorModeValue('black', 'white'),
 		ReadingContrast: useColorModeValue('gray.200', 'blackAlpha.800'),
 		buttonbk: useColorModeValue('black', 'cyan.900'),
-		softGray: '#1A202C',
+		button: 'gray.900',
+		head: useColorModeValue('', 'blackAlpha.800'),
+		on: 'yellow.700',
 	}
 }
