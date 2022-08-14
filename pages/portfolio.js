@@ -1,6 +1,10 @@
-import { Box } from '@chakra-ui/react'
 import React from 'react'
+import { Cards } from '../components/portfolio/Cards'
 
-export default function portfolio() {
-	return <Box>portfolio</Box>
+export default function Portfolio() {
+	return (
+		<>
+			<Cards />
+		</>
+	)
 }
