@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Box } from '@chakra-ui/react'
-// import RainControl from './rainControl'
 
 function LaserBeam({ beamId, beamOpacity }) {
 	const { scrollYProgress } = useScroll()

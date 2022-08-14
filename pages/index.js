@@ -12,7 +12,7 @@ import Space from '../components/landing/Space'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-	const beamOpacity = useMotionValue(80)
+	const beamOpacity = useMotionValue(90)
 	return (
 		<Box className={styles.container}>
 			<Head>
