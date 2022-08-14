@@ -20,7 +20,13 @@ export default function Header() {
 	const { colorMode, toggleColorMode } = useColorMode()
 	const cols = useThemeColors()
 	return (
-		<HStack as='nav' alignItems='center' paddingRight='4' backgroundColor={cols.head}>
+		<HStack
+			as='nav'
+			alignItems='center'
+			paddingRight='4'
+			backgroundColor={cols.head}
+			zIndex='2'
+		>
 			<NextLink href='/' passHref>
 				<Link _hover={{ textDecoration: null }}>
 					<Box

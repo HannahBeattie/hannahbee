@@ -1,10 +1,12 @@
 import { StarIcon } from '@chakra-ui/icons'
 import {
 	Box,
+	HStack,
 	Slider,
 	SliderFilledTrack,
 	SliderThumb,
 	SliderTrack,
+	Text,
 	Tooltip,
 	withDefaultSize,
 } from '@chakra-ui/react'
@@ -15,15 +17,31 @@ export default function RainControl({ beamOpacity }) {
 	const { scrollYProgress } = useScroll()
 
 	const opacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1])
+	const offset = useTransform(scrollYProgress, [0.5, 0.6], ['3rem', '0rem'])
 
 	return (
-		<motion.div style={{ opacity }}>
-			<Tooltip label='adjust rainbow' bg={'0'} color={'white'} backgroundColor={'black'}>
-				<Box position='fixed' left='0' bottom='0' bgColor={'black'}>
+		<Box position='fixed' left='0' bottom='0' right='0' overflow='visible'>
+			<motion.div
+				style={{
+					opacity,
+					y: offset,
+					backgroundColor: 'black',
+					// paddingHorizontal: '2rem',
+					paddingLeft: '2rem',
+					paddingRight: '2rem',
+					paddingTop: '0.5rem',
+					paddingBottom: '0.5rem',
+				}}
+			>
+				{/* <Tooltip label='adjust rainbow' bg={'0'} color={'white'} backgroundColor={'black'}> */}
+				<HStack>
+					<Text fontSize='sm'>Adjust rainbow</Text>
 					<Slider
 						aria-label={('min', 'max')}
 						defaultValue={[80]}
-						width={'100vw'}
+						// width={'100vw'}
+						display='flex'
+						flex='1'
 						onChange={(val) => {
 							// setRainbow(val)
 							console.log('setRainbow is:', val)
@@ -38,8 +56,9 @@ export default function RainControl({ beamOpacity }) {
 							<Box color='white' as={StarIcon} />
 						</SliderThumb>
 					</Slider>
-				</Box>
-			</Tooltip>
-		</motion.div>
+				</HStack>
+				{/* </Tooltip> */}
+			</motion.div>
+		</Box>
 	)
 }

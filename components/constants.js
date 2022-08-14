@@ -12,5 +12,6 @@ export function useThemeColors() {
 		button: 'gray.900',
 		head: useColorModeValue('', 'blackAlpha.800'),
 		on: 'yellow.700',
+		bkdrop: useColorModeValue('black', ''),
 	}
 }

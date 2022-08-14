@@ -24,7 +24,7 @@ export default function Footer() {
 					<Box>
 						<Tooltip label='Linkedin' bg={cols.black} color={cols.white}>
 							<Button
-								opacity={'50%'}
+								opacity={'90%'}
 								background={cols.button}
 								h={butht}
 								w={butwid}
@@ -48,7 +48,7 @@ export default function Footer() {
 					<Box>
 						<Tooltip label='Github' bg={cols.black} color={cols.white}>
 							<Button
-								opacity={'50%'}
+								opacity={'90%'}
 								background={cols.button}
 								h={butht}
 								w={butwid}
@@ -80,7 +80,7 @@ export default function Footer() {
 						</Tooltip>
 					</Box>
 					<Spacer />
-					<Text fontSize={'12px'} color={cols.white} opacity={'50%'}>
+					<Text fontSize={'12px'} color={cols.white} opacity={'90%'}>
 						Ⓒ HannahBee all rights reserved
 					</Text>
 				</HStack>

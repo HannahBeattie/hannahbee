@@ -87,7 +87,7 @@ export default function LandingLinks() {
 					color={' black'}
 					borderRadius={'5px'}
 					as={Link}
-					href='/Projects'
+					href='/portfolio'
 					_hover={{ textDecoration: 'none' }}
 				>
 					<Text fontSize={'2xl'}>ok.</Text>
