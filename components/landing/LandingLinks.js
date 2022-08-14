@@ -44,9 +44,10 @@ export default function LandingLinks() {
 					justifyContent={'center'}
 					alignItems={'center'}
 					transform='rotate(-10deg)'
+					w='30rem'
 				>
-					<Appear h={'15rem'}>
-						<Image src={me} />
+					<Appear>
+						<Image alt='a set of four images of my face' src={me} />
 					</Appear>
 				</Box>
 				<Box h={'5rem'} />

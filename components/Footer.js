@@ -14,6 +14,7 @@ export default function Footer() {
 	return (
 		<HStack
 			as='footer'
+			zIndex={1}
 			py={{ base: 3, md: 3 }}
 			paddingX={{ base: '0.5rem', md: '1rem' }}
 			backgroundColor={cols.black}

@@ -1,5 +1,6 @@
-import { Flex, Image } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import React from 'react'
 import mrmr from '../../public/assets/mrmr.png'
 
@@ -16,7 +17,7 @@ export default function Leo() {
 					duration: 30,
 				}}
 			>
-				<Image src={mrmr} href={'my cat'} />
+				<Image alt='a beautiful confused-looking cat' src={mrmr} href={'my cat'} />
 			</motion.div>
 		</Flex>
 	)

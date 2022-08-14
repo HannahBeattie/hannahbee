@@ -17,7 +17,8 @@ export default function Hello() {
 			<Text
 				className='neon'
 				fontSize={{ base: '9rem', md: '15rem', lg: '18rem' }}
-				fontWeight={700}
+				fontWeight='700'
+				textAlign={'center'}
 			>
 				Hello.
 			</Text>
