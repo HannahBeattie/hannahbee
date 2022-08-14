@@ -12,3 +12,8 @@
 .blur {
 	backdrop-filter: blur(10px);
 }
+
+.glowMore {
+	box-shadow: rgb(245, 229, 4) 0px 5px 5px 1px, #ffaa00 0px 6px 6px 4px,
+		rgb(147, 1, 170) 0px 6px 6px 8px;
+}

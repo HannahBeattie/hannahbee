@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Text } from '@chakra-ui/react'
+import { Box, Heading, HStack, Text, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import mrGood from '../../public/assets/portfolio/mrGood.jpeg'
 import todo from '../../public/assets/portfolio/todo.jpeg'
@@ -102,5 +102,36 @@ export function Cards() {
 		},
 	]
 
-	return <Text>portfolio goes here</Text>
+	// return <Text>portfolio goes here</Text>
+
+	const cards = cardProps.map((props, idx) => (
+		<Box key={`project-${idx}`} minW={{ base: undefined, md: '45rem' }} display='flex'>
+			<Slide {...props} />
+		</Box>
+	))
+
+	return (
+		<>
+			<HStack
+				display={{ base: 'none', md: 'flex' }}
+				maxW='100vw'
+				w='100vw'
+				overflowX='auto'
+				alignItems='stretch'
+				flex='1'
+				spacing='8'
+				p='8'
+			>
+				{cards}
+			</HStack>
+			<VStack
+				display={{ base: 'flex', md: 'none' }}
+				alignItems='stretch'
+				flex='1'
+				spacing='8'
+			>
+				{cards}
+			</VStack>
+		</>
+	)
 }

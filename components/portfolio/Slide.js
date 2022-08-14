@@ -18,8 +18,8 @@ import { useThemeColors } from '../constants'
 export default function Slide({ img, imgAlt, title, linkText, details, linkUrl }) {
 	const cols = useThemeColors()
 	return (
-		<VStack p={'1rem'} alignItems='flex-start' backgroundColor={cols.ReadingContrast}>
-			{/* <Image src={img} alt={imgAlt} /> */}
+		<VStack p={'2rem'} alignItems='flex-start' backgroundColor={cols.ReadingContrast}>
+			<Image src={img} alt={imgAlt} />
 
 			<Text fontSize={'xl'} fontWeight={700}>
 				{title}

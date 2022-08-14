@@ -26,16 +26,18 @@ export default function RainControl({ beamOpacity }) {
 					opacity,
 					y: offset,
 					backgroundColor: 'black',
-					// paddingHorizontal: '2rem',
-					paddingLeft: '2rem',
-					paddingRight: '2rem',
+
+					paddingLeft: '1rem',
+					paddingRight: '1rem',
 					paddingTop: '0.5rem',
 					paddingBottom: '0.5rem',
 				}}
 			>
 				{/* <Tooltip label='adjust rainbow' bg={'0'} color={'white'} backgroundColor={'black'}> */}
 				<HStack>
-					<Text fontSize='sm'>Adjust rainbow</Text>
+					<Text color={'gray.300'} fontSize='sm'>
+						rainbow intensity
+					</Text>
 					<Slider
 						aria-label={('min', 'max')}
 						defaultValue={[80]}

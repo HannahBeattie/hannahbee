@@ -13,5 +13,7 @@ export function useThemeColors() {
 		head: useColorModeValue('', 'blackAlpha.800'),
 		on: 'yellow.700',
 		bkdrop: useColorModeValue('black', ''),
+		blurbbk: useColorModeValue('RGBA(255, 255, 255, 0.8)', 'rgba(0, 0, 0, 0.6)'),
+		blurbfont: useColorModeValue('black', 'white'),
 	}
 }

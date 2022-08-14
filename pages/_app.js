@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }) {
 			<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 			<VStack alignItems='stretch' minH='100vh' spacing='0'>
 				<Header />
-				<VStack as='main' flex='1'>
+				<VStack as='main' flex='1' spacing='0'>
 					<Component {...pageProps} />
 				</VStack>
 				<Footer />
