@@ -21,22 +21,23 @@ export default function Slide({ img, imgAlt, title, linkText, details, linkUrl }
 		<VStack p={'2rem'} alignItems='flex-start' backgroundColor={cols.ReadingContrast}>
 			<Image src={img} alt={imgAlt} />
 
-			<Text fontSize={'xl'} fontWeight={700}>
+			<Text paddingBottom={3} paddingTop={2} fontSize={'xl'} fontWeight={700}>
 				{title}
 			</Text>
-			<Box>{details}</Box>
+			<Box paddingBottom={2}>{details}</Box>
+
 			<Spacer />
 			{linkText && (
 				<NextLink href={linkUrl} passHref _hover={{ textDecoration: 'none' }}>
 					<Button
 						as={Link}
-						padding={3}
+						padding={5}
 						isExternal
-						borderRadius={'20px'}
+						borderRadius={'10px'}
 						fontSize={'small'}
-						fontWeight={'500'}
-						color={cols.white}
-						backgroundColor={cols.buttonbk}
+						fontWeight={'700'}
+						color={cols.ReadingContrast}
+						backgroundColor={cols.ReadingContrast2}
 						_hover={{ textDecoration: 'none' }}
 					>
 						{linkText}

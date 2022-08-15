@@ -1,6 +1,4 @@
-import { Box, Link, Text, VStack } from '@chakra-ui/react'
-import Image from 'next/image'
-import me from '../../public/assets/me.jpg'
+import { Box, Center, HStack, Link, Text, Tooltip, VStack } from '@chakra-ui/react'
 import { useThemeColors } from '../constants'
 import Appear from './Appear'
 import Leo from './Leo'
@@ -11,14 +9,14 @@ export default function LandingLinks() {
 
 	const commonBoxProps = {
 		width: blurbWidth,
-		padding: '1.5rem',
+		padding: '2rem',
 		display: 'flex',
 		flexDir: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: cols.blurbbk,
 		color: cols.blurbfont,
-		borderRadius: '5px',
+		borderRadius: '3px',
 		className: 'blur glow',
 	}
 
@@ -26,10 +24,11 @@ export default function LandingLinks() {
 		<Box maxW='4xl' alignSelf='center'>
 			<VStack justifyContent={'center'} alignItems={'center'} marginTop={10} marginBottom={3}>
 				<Box h={'10rem'} />
-
-				<Box {...commonBoxProps} alignSelf='flex-end'>
-					<Text fontSize={'2xl'}>My name is Hannah.</Text>
-				</Box>
+				<Tooltip label="(that's a palindrome)" bg={cols.black} color={cols.white}>
+					<Box {...commonBoxProps} alignSelf='flex-end'>
+						<Text fontSize={'2xl'}>My name is Hannah.</Text>
+					</Box>
+				</Tooltip>
 
 				<Box h={'5rem'} />
 
@@ -53,7 +52,7 @@ export default function LandingLinks() {
 				<Box h={'5rem'} />
 				<Box alignSelf='flex-end' {...commonBoxProps}>
 					<Text fontSize={'2xl'} w='12rem'>
-						I am an artist, insect enthusiast, brand designer and web developer.
+						I am an artist, insect enthusiast, designer and dev...
 					</Text>
 				</Box>
 
@@ -73,10 +72,11 @@ export default function LandingLinks() {
 
 				<Box {...commonBoxProps}>
 					<Text zIndex='8' fontSize={'2xl'}>
-						look at my work...
+						Want to see my work?
 					</Text>
 				</Box>
 				<Box h={'2rem'} />
+
 				<Box
 					zIndex='5'
 					padding={'1.5rem'}
@@ -93,6 +93,28 @@ export default function LandingLinks() {
 					_hover={{ textDecoration: 'none' }}
 				>
 					<Text fontSize={'2xl'}>ok.</Text>
+				</Box>
+				<Box h={'2rem'} />
+				<Box
+					zIndex='5'
+					padding={'2rem'}
+					display='flex'
+					flexDir='column'
+					justifyContent={'center'}
+					alignItems={'center'}
+					textAlign={'center'}
+					className='glow'
+					backgroundColor={' white'}
+					color={' black'}
+					borderRadius={'6px'}
+					as={Link}
+					href='/about'
+					_hover={{ textDecoration: 'none' }}
+				>
+					<Text fontSize={'2xl'}>
+						not just yet...
+						<br></br>I want to know more about you.
+					</Text>
 				</Box>
 
 				<Box h={'15rem'} />

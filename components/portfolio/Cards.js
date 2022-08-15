@@ -14,7 +14,7 @@ import 'swiper/css/pagination'
 
 export function Cards() {
 	const cols = useThemeColors()
-	const blurbsize = 'sm'
+	const blurbsize = 'm'
 
 	const cardProps = [
 		{
@@ -32,9 +32,11 @@ export function Cards() {
 						identity, logo and website aesthetic that fit the ethos and intention of the
 						company; Which is functional, minimal, playful and highly customer-focused.
 						<br />
+						<br />
 						The website was a collaboration between myself and Mikey Lemmon who handled
 						the backend functionality and software integration, while I focused on the
 						landing page and sustaining a constant visual and colour story.
+						<br />
 					</Text>
 				</>
 			),
@@ -67,6 +69,25 @@ export function Cards() {
 		},
 
 		{
+			img: mrGood,
+			imgAlt: 'A screen grab of my app, "Mr Verygood", that gives users a virtual pep talk',
+			title: ' Mr Verygood',
+			linkText: 'Meet Mr Verygood',
+			linkUrl: 'https://mr-verygood.herokuapp.com',
+			details: (
+				<>
+					<Text fontSize={blurbsize}>
+						A somewhat goofy solo project I completed during my study at Dev Academy.
+					</Text>
+					<br />
+					<Text fontSize={blurbsize}>
+						‘Mr Verygood’ is a virtual friend, that gives users a random pep-talk on
+						click.
+					</Text>
+				</>
+			),
+		},
+		{
 			img: todo,
 			imgAlt: 'A screen grab of "todo" app',
 			title: 'Todo',
@@ -82,30 +103,12 @@ export function Cards() {
 				</>
 			),
 		},
-		{
-			img: mrGood,
-			imgAlt: 'A screen grab of my app, "Mr Verygood", that gives users a virtual pep talk',
-			title: ' Mr Verygood',
-			linkText: 'Meet Mr Verygood',
-			linkUrl: 'https://mr-verygood.herokuapp.com',
-			details: (
-				<>
-					<Text fontSize={blurbsize}>
-						A somewhat goofy solo project I completed during my study at Dev Academy.
-					</Text>
-					<Text fontSize={blurbsize}>
-						‘Mr Verygood’ is a virtual friend, that gives users a random pep-talk on
-						click.
-					</Text>
-				</>
-			),
-		},
 	]
 
 	// return <Text>portfolio goes here</Text>
 
 	const cards = cardProps.map((props, idx) => (
-		<Box key={`project-${idx}`} minW={{ base: undefined, md: '45rem' }} display='flex'>
+		<Box key={`project-${idx}`} minW={{ base: undefined, md: '36rem' }} display='flex'>
 			<Slide {...props} />
 		</Box>
 	))
@@ -113,6 +116,7 @@ export function Cards() {
 	return (
 		<>
 			<HStack
+				backgroundColor={cols.ReadingContrast3}
 				display={{ base: 'none', md: 'flex' }}
 				maxW='100vw'
 				w='100vw'
@@ -125,6 +129,7 @@ export function Cards() {
 				{cards}
 			</HStack>
 			<VStack
+				backgroundColor={cols.ReadingContrast3}
 				display={{ base: 'flex', md: 'none' }}
 				alignItems='stretch'
 				flex='1'
