@@ -1,58 +1,64 @@
-import {
-	Box,
-	Button,
-	Center,
-	Text,
-	useColorMode,
-	useColorModeValue,
-	useEventListener,
-} from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Button, Image, useColorModeValue, useEventListener, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import body from '../public/assets/slug/body0.png'
+
+const bodyUrl = '/assets/slug/body0.png'
 
 const initialParts = {
 	Hair: {
 		index: 0,
 		count: 8,
-		path: '../public/assets/slug/0/hair',
+		path: '/assets/slug/0/hair',
 		elemId: 'hair',
+		alt: 'a wonderful haircut',
+		zIndex: 3,
 	},
 	Head: {
 		index: 0,
 		count: 20,
-		path: '../public/assets/slug/1/face',
+		path: '/assets/slug/1/face',
 		elemId: 'head',
+		alt: 'an intense facial expression',
+		zIndex: 4,
 	},
 	Glasses: {
 		index: 0,
 		count: 4,
-		path: '../public/assets/slug/2/glasses',
+		path: '/assets/slug/2/glasses',
 		elemId: 'glasses',
+		alt: 'some cool glasses',
+		zIndex: 5,
 	},
 	Body: {
 		index: 0,
 		count: 21,
-		path: '../public/assets/slug/3/top',
+		path: '/assets/slug/3/top',
 		elemId: 'body',
+		alt: 'an impressive top',
+		zIndex: 2,
 	},
 	Bottom: {
 		index: 0,
 		count: 5,
-		path: '../public/assets/slug/4/bottoms',
+		path: '/assets/slug/4/bottoms',
 		elemId: 'bottom',
+		alt: 'great bottoms',
+		zIndex: 2,
 	},
 	Accessories: {
 		index: 0,
 		count: 26,
-		path: '../public/assets/slug/5/accessories',
+		path: '/assets/slug/5/accessories',
 		elemId: 'accessories',
+		alt: 'incredible accessories (children?)',
+		zIndex: 5,
 	},
 	Tail: {
 		index: 0,
 		count: 6,
-		path: '../public/assets/slug/6/tail',
+		path: '/assets/slug/6/tail',
 		elemId: 'tail',
+		alt: 'that tail though... or a sock',
+		zIndex: 2,
 	},
 }
 
@@ -79,6 +85,17 @@ export default function Slugme() {
 	const [parts, setParts] = useState(initialParts)
 	const selected = parts[partName]
 
+	const nextPart = () => setPart(wrapNext(part, partNames.length))
+	const nextOutfit = () => {
+		setParts({
+			...parts,
+			[partName]: {
+				...selected,
+				index: wrapNext(selected.index, selected.count),
+			},
+		})
+	}
+
 	useEventListener('keydown', (evt) => {
 		// alert(`keydown!!! wow!! Who woulda thought it!? Not us! (key=${evt.key})`)
 		switch (evt.key) {
@@ -86,7 +103,7 @@ export default function Slugme() {
 				setPart(wrapPrev(part, partNames.length))
 				break
 			case 'ArrowDown':
-				setPart(wrapNext(part, partNames.length))
+				nextPart()
 				break
 			case 'ArrowLeft':
 				setParts({
@@ -98,34 +115,48 @@ export default function Slugme() {
 				})
 				break
 			case 'ArrowRight':
-				setParts({
-					...parts,
-					[partName]: {
-						...selected,
-						index: wrapNext(selected.index, selected.count),
-					},
-				})
+				nextOutfit()
 				break
 		}
 	})
 
 	return (
 		<>
-			<Box
-				backgroundColor={useColorModeValue('pink.200', '')}
-				h={'6rem'}
-				w={'9rem'}
-				left='5rem'
-				top='0rem'
-				position={'absolute'}
-			/>
-			<Text as='pre' position='absolute' top='7rem' left='1rem'>
+			{/* <Text as='pre' position='absolute' top='7rem' left='1rem'>
 				Part = #{part} = {partName} <br />
 				{partName} = {JSON.stringify(selected, null, '  ')}
-			</Text>
-			<Box justifyContent={'center'} alignSelf={'center'} paddingTop='3rem'>
-				<Image alt='hand-drawn image of a naked cartoon slug' src={body} />
-			</Box>
+			</Text> */}
+			<VStack
+				flex='1'
+				alignSelf='stretch'
+				alignItems='center'
+				justifyContent='center'
+				bg={useColorModeValue('gray.400', 'purple.900')}
+			>
+				<Box position='relative' onClick={nextOutfit} cursor='pointer'>
+					{Object.entries(parts).map(([name, { alt, index, path, zIndex }]) => (
+						<Image
+							key={`${name}-${index}`}
+							position='absolute'
+							src={`${path}${index}.png`}
+							zIndex={zIndex}
+							alt={alt}
+						/>
+					))}
+					<Image src={bodyUrl} alt='hand-drawn image of a naked cartoon slug' />
+				</Box>
+				<Button
+					onClick={nextPart}
+					position='relative'
+					top='-1rem'
+					variant={useColorModeValue('solid', 'outline')}
+					colorScheme={useColorModeValue('purple', 'pink')}
+					minW='10rem'
+					zIndex='10'
+				>
+					{partName.toUpperCase()}
+				</Button>
+			</VStack>
 		</>
 	)
 }
