@@ -4,11 +4,13 @@ import { Cards } from '../components/portfolio/Cards'
 import { useThemeColors } from '../components/constants'
 import Image from 'next/image'
 import painter from '../public/assets/spaceDoodles/painter2.png'
+import { motion } from 'framer-motion'
 
 export default function Portfolio() {
 	const cols = useThemeColors()
 	const h = '5rem'
 	const w = '5rem'
+
 	return (
 		<>
 			<Box

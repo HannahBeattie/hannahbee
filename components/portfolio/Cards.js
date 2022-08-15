@@ -4,6 +4,7 @@ import mrGood from '../../public/assets/portfolio/mrGood.jpeg'
 import todo from '../../public/assets/portfolio/todo.jpeg'
 import xit from '../../public/assets/portfolio/xit.jpeg'
 import momo from '../../public/assets/portfolio/momo.jpeg'
+import slug from '../../public/assets/portfolio/dress.png'
 import Slide from './Slide'
 import { useThemeColors } from '../../components/constants'
 import { Navigation, Pagination } from 'swiper'
@@ -83,6 +84,24 @@ export function Cards() {
 					<Text fontSize={blurbsize}>
 						‘Mr Verygood’ is a virtual friend, that gives users a random pep-talk on
 						click.
+					</Text>
+				</>
+			),
+		},
+		{
+			img: slug,
+			imgAlt: 'A screen grab of "dress the slug"',
+			linkText: 'Dress the slug',
+			linkUrl: '/slug',
+			title: 'Todo',
+			details: (
+				<>
+					<Text fontSize={blurbsize}>
+						A fun dress-up game I originally created while studying at Dev acadamy.
+						<br></br>
+						<br></br>
+						Featuring original illustrations by myslef of a slug whose lived an exciting
+						life.
 					</Text>
 				</>
 			),

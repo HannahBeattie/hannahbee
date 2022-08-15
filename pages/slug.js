@@ -8,7 +8,6 @@ function Slug() {
 			<Box
 				backgroundColor={useColorModeValue('purple.800', '')}
 				h={'6rem'}
-				// w={'9rem'}
 				left='5rem'
 				top='0rem'
 				right='0'

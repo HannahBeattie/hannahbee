@@ -1,5 +1,14 @@
-import { Box, Button, Image, useColorModeValue, useEventListener, VStack } from '@chakra-ui/react'
+import {
+	Box,
+	Button,
+	Image,
+	Tooltip,
+	useColorModeValue,
+	useEventListener,
+	VStack,
+} from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { useThemeColors } from './constants'
 
 const bodyUrl = '/assets/slug/body0.png'
 
@@ -80,6 +89,7 @@ const wrapPrev = (val, count) => {
 }
 
 export default function Slugme() {
+	const cols = useThemeColors()
 	const [part, setPart] = useState(0)
 	const partName = partNames[part]
 	const [parts, setParts] = useState(initialParts)
@@ -143,19 +153,27 @@ export default function Slugme() {
 							alt={alt}
 						/>
 					))}
+
 					<Image src={bodyUrl} alt='hand-drawn image of a naked cartoon slug' />
 				</Box>
-				<Button
-					onClick={nextPart}
-					position='relative'
-					top='-1rem'
-					variant={useColorModeValue('solid', 'outline')}
-					colorScheme={useColorModeValue('purple', 'pink')}
-					minW='10rem'
-					zIndex='10'
+				<Tooltip
+					label="Use the 'up', 'down', 'left' and 'right' keys
+					or click the slug's body to dress him"
+					bg={cols.black}
+					color={cols.white}
 				>
-					{partName.toUpperCase()}
-				</Button>
+					<Button
+						onClick={nextPart}
+						position='relative'
+						top='-1rem'
+						variant={useColorModeValue('solid', 'outline')}
+						colorScheme={useColorModeValue('purple', 'pink')}
+						minW='10rem'
+						zIndex='10'
+					>
+						{partName.toUpperCase()}
+					</Button>
+				</Tooltip>
 			</VStack>
 		</>
 	)
