@@ -1,9 +1,11 @@
 import {
 	Box,
+	Button,
 	Divider,
 	HStack,
 	IconButton,
 	Link,
+	LinkOverlay,
 	Spacer,
 	Text,
 	useColorMode,
@@ -15,6 +17,17 @@ import { useThemeColors } from './constants'
 import on from '../public/assets/spaceDoodles/on2.png'
 import off from '../public/assets/spaceDoodles/off2.png'
 import Image from 'next/image'
+import {
+	Menu,
+	MenuButton,
+	MenuList,
+	MenuItem,
+	MenuItemOption,
+	MenuGroup,
+	MenuOptionGroup,
+	MenuDivider,
+} from '@chakra-ui/react'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 export default function Header() {
 	const { colorMode, toggleColorMode } = useColorMode()
@@ -39,19 +52,53 @@ export default function Header() {
 					</Box>
 				</Link>
 			</NextLink>
-			<NextLink href='/portfolio' passHref>
-				<Link _hover={{ textDecoration: null }}>
-					<VStack paddingLeft={'1rem'} color={cols.white}>
-						<Divider variant={'solid'} orientation='horizontal' />
-						<Text>FULLSTACK</Text>
-						<Divider variant={'solid'} orientation='horizontal' />
-						<Text>DEVELOPER</Text>
-						<Divider variant={'solid'} orientation='horizontal' />
-					</VStack>
-				</Link>
-			</NextLink>
+
+			<VStack paddingLeft={'1rem'} color={cols.white}>
+				<Divider variant={'solid'} orientation='horizontal' />
+				<Text>FULLSTACK</Text>
+				<Divider variant={'solid'} orientation='horizontal' />
+				<Text>DEVELOPER</Text>
+				<Divider variant={'solid'} orientation='horizontal' />
+			</VStack>
 
 			<Spacer />
+			<HStack spacing={'2rem'} paddingRight={'1.5rem'}>
+				<NextLink href='/portfolio' passHref>
+					<Link _hover={{ textDecoration: null }}>
+						<Text mRight={'5rem'} color={'white'}>
+							Portfolio
+						</Text>
+					</Link>
+				</NextLink>
+
+				<NextLink href='/monsters' passHref>
+					<Link _hover={{ textDecoration: null }}>
+						<Text color={cols.white}>Character Design</Text>
+					</Link>
+				</NextLink>
+
+				<NextLink href='/contact' passHref>
+					<Link _hover={{ textDecoration: null }}>
+						<Text color={cols.white}>Contact</Text>
+					</Link>
+				</NextLink>
+
+				<Menu>
+					{({ isOpen }) => (
+						<>
+							<MenuButton color={cols.white} isActive={isOpen} as={Text}>
+								{isOpen ? 'ect.' : 'ect.'}
+							</MenuButton>
+							<MenuList>
+								<MenuItem>
+									<LinkOverlay href='/about'>About me</LinkOverlay>
+								</MenuItem>
+							</MenuList>
+						</>
+					)}
+				</Menu>
+			</HStack>
+
 			<IconButton
 				isRound
 				padding={2.5}

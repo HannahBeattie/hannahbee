@@ -27,8 +27,8 @@ export function Cards() {
 			details: (
 				<>
 					<Text fontSize={blurbsize}>
-						Studio Monkey creates premier VFX management software used my many high
-						profile studios.
+						Studio Monkey is a premier VFX management tool used my many high profile
+						studios.
 						<br />I worked in close dialog with CEO Zach Tucker to create a visual brand
 						identity, logo and website aesthetic that fit the ethos and intention of the
 						company; Which is functional, minimal, playful and highly customer-focused.
@@ -93,7 +93,7 @@ export function Cards() {
 			imgAlt: 'A screen grab of "dress the slug"',
 			linkText: 'Dress the slug',
 			linkUrl: '/slug',
-			title: 'Todo',
+			title: 'Dress the slug',
 			details: (
 				<>
 					<Text fontSize={blurbsize}>

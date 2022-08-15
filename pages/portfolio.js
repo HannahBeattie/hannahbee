@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { Cards } from '../components/portfolio/Cards'
 import { useThemeColors } from '../components/constants'
@@ -14,16 +14,16 @@ export default function Portfolio() {
 	return (
 		<>
 			<Box
-				backgroundColor={cols.bkdrop}
+				backgroundColor={useColorModeValue('black', '')}
 				h={'6rem'}
-				w={'8.5rem'}
 				left='5rem'
 				top='0rem'
+				right='0'
 				position={'absolute'}
 			/>
-			<Box h={h} w={w} left='12.5rem' top='-1rem' position={'absolute'}>
+			{/* <Box h={h} w={w} left='12.5rem' top='-1rem' position={'absolute'}>
 				<Image src={painter} alt={'hand-drawn image of astranaut painting logo'} />
-			</Box>
+			</Box> */}
 
 			<Cards />
 		</>
