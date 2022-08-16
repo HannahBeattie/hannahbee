@@ -22,6 +22,7 @@ export default function Contact() {
 				right='0'
 				position={'absolute'}
 			/>
+
 			<Container paddingTop={'3rem'}>
 				<Heading>Hello you!</Heading>
 				<br></br>

@@ -2,6 +2,7 @@ import {
 	Box,
 	Button,
 	Divider,
+	Hide,
 	HStack,
 	IconButton,
 	Link,
@@ -62,26 +63,31 @@ export default function Header() {
 			</VStack>
 
 			<Spacer />
+
 			<HStack spacing={'2rem'} paddingRight={'1.5rem'}>
-				<NextLink href='/portfolio' passHref>
-					<Link _hover={{ textDecoration: null }}>
-						<Text mRight={'5rem'} color={'white'}>
-							Portfolio
-						</Text>
-					</Link>
-				</NextLink>
+				<Hide below='md'>
+					<NextLink href='/portfolio' passHref>
+						<Link _hover={{ textDecoration: null }}>
+							<Text color={'white'}>Portfolio</Text>
+						</Link>
+					</NextLink>
+				</Hide>
 
-				<NextLink href='/monsters' passHref>
-					<Link _hover={{ textDecoration: null }}>
-						<Text color={cols.white}>Character Design</Text>
-					</Link>
-				</NextLink>
+				<Hide below='md'>
+					<NextLink href='/monsters' passHref>
+						<Link _hover={{ textDecoration: null }}>
+							<Text color={cols.white}>Character Design</Text>
+						</Link>
+					</NextLink>
+				</Hide>
 
-				<NextLink href='/contact' passHref>
-					<Link _hover={{ textDecoration: null }}>
-						<Text color={cols.white}>Contact</Text>
-					</Link>
-				</NextLink>
+				<Hide below='md'>
+					<NextLink href='/contact' passHref>
+						<Link _hover={{ textDecoration: null }}>
+							<Text color={cols.white}>Contact</Text>
+						</Link>
+					</NextLink>
+				</Hide>
 
 				<Menu>
 					{({ isOpen }) => (
