@@ -21,9 +21,6 @@ export default function Portfolio() {
 				right='0'
 				position={'absolute'}
 			/>
-			{/* <Box h={h} w={w} left='12.5rem' top='-1rem' position={'absolute'}>
-				<Image src={painter} alt={'hand-drawn image of astranaut painting logo'} />
-			</Box> */}
 
 			<Cards />
 		</>

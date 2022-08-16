@@ -94,7 +94,7 @@ export default function Header() {
 					<Menu>
 						{({ isOpen }) => (
 							<>
-								<MenuButton color={cols.white} isActive={isOpen} as={Text}>
+								<MenuButton color={cols.white} isactive={isOpen} as={Text}>
 									{isOpen ? 'ect.' : 'ect.'}
 								</MenuButton>
 								<MenuList>

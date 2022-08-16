@@ -36,8 +36,8 @@ export default function Slide({ img, imgAlt, title, linkText, details, linkUrl }
 						borderRadius={'10px'}
 						fontSize={'small'}
 						fontWeight={'700'}
-						color={cols.ReadingContrast}
-						backgroundColor={cols.ReadingContrast2}
+						color={cols.white}
+						backgroundColor={cols.black}
 						_hover={{ textDecoration: 'none' }}
 					>
 						{linkText}

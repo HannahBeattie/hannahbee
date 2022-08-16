@@ -19,8 +19,6 @@ export default function Burger() {
 						<Link href='/contact'>Contact</Link>
 						<Link href='/monsters'>Monsters</Link>
 						<Link href='/life'>Conway's game</Link>
-						<Link href='https://github.com/'>Github</Link>
-						<Link href='https://www.linkedin.com/feed/'>LinkedIn</Link>
 					</VStack>
 				</MenuList>
 			</Menu>

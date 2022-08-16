@@ -14,10 +14,7 @@ export function useThemeColors() {
 		on: 'yellow.700',
 		bkdrop: useColorModeValue('black', ''),
 		blurbbk: useColorModeValue('RGBA(255, 255, 255, 0.8)', 'rgba(0, 0, 0, 0.6)'),
-		blurbfont: useColorModeValue('black', 'white'),
+		blurbbk2: useColorModeValue('RGBA(255, 255, 255, 0.3)', 'rgba(0, 0, 0, 0.6)'),
 		blurbrv: useColorModeValue('white', 'black'),
-		cont: useColorModeValue('white', 'blackAlpha.500'),
-		ReadingContrast2: useColorModeValue('blackAlpha.800', 'gray.200'),
-		ReadingContrast3: useColorModeValue('', 'gray.500'),
 	}
 }

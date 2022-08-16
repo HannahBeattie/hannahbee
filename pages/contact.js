@@ -1,19 +1,22 @@
 import {
 	Box,
-	Container,
 	Heading,
 	HStack,
 	Link,
 	Spacer,
 	Text,
 	useColorModeValue,
+	VStack,
 } from '@chakra-ui/react'
-import React from 'react'
 import NextLink from 'next/link'
+import { React } from 'react'
+import { useThemeColors } from '../components/constants'
+import ContactAnimation from '../components/ContactAnimation'
 
 export default function Contact() {
+	const cols = useThemeColors()
 	return (
-		<>
+		<Box>
 			<Box
 				backgroundColor={useColorModeValue('black', '')}
 				h={'6rem'}
@@ -22,31 +25,49 @@ export default function Contact() {
 				right='0'
 				position={'absolute'}
 			/>
+			<Box>
+				<ContactAnimation zIndex={0} />
 
-			<Container paddingTop={'3rem'}>
-				<Heading>Hello you!</Heading>
-				<br></br>
-				<Text>Here is some contact information,</Text>
-				<Text>use it wisely.</Text>
-				<br></br>
-				<HStack spacing={'3rem'} py={'1rem'}>
-					<NextLink href='https://www.linkedin.com/in/hannah-bee-2b36aa246/' passHref>
-						<Link _hover={{ textDecoration: null }}>
-							<Text>Linkedin</Text>
+				<VStack
+					marginTop={'-20'}
+					zIndex={2}
+					padding='2rem'
+					display='flex'
+					flexDir='column'
+					justifyContent='center'
+					alignItems='center'
+					backgroundColor={cols.blurbbk2}
+					color={cols.blurbfont}
+					borderRadius='3px'
+					className='blur2 glow'
+				>
+					<Text zIndex={1} paddingBottom={'1rem'}>
+						CONTACT
+					</Text>
+					<HStack zIndex={1} spacing={'4rem'} p={5}>
+						<NextLink href='https://www.linkedin.com/in/hannah-bee-2b36aa246/' passHref>
+							<Link _hover={{ textDecoration: null }}>
+								<Text>Linkedin</Text>
+							</Link>
+						</NextLink>
+
+						<NextLink href='https://github.com/HannahBeattie' passHref>
+							<Link _hover={{ textDecoration: null }}>
+								<Text>Github</Text>
+							</Link>
+						</NextLink>
+					</HStack>
+					<NextLink
+						paddingBottom={'2rem'}
+						href='mailto:hannybeedesign@gmail.com'
+						passHref
+					>
+						<Link paddingBottom={'2rem'} zIndex={2} _hover={{ textDecoration: null }}>
+							hannybeedesign@gmail
 						</Link>
 					</NextLink>
-
-					<NextLink href='https://github.com/HannahBeattie' passHref>
-						<Link _hover={{ textDecoration: null }}>
-							<Text>Github</Text>
-						</Link>
-					</NextLink>
-				</HStack>
-
-				<NextLink href='mailto:hannybeedesign@gmail.com' passHref>
-					<Link _hover={{ textDecoration: null }}>hannybeedesign@gmail</Link>
-				</NextLink>
-			</Container>
-		</>
+				</VStack>
+			</Box>
+		</Box>
 	)
 }
