@@ -121,8 +121,8 @@ export default function Blue() {
 											borderRadius={grid[i][k] ? 20 : 10}
 											key={`cell-${i}-${k}`}
 											// className='neon glow '
-											w={grid[i][k] ? 5 : 1}
-											h={grid[i][k] ? 4 : 2}
+											w={grid[i][k] ? 2 : 3}
+											h={grid[i][k] ? 2 : 4}
 											backgroundColor={grid[i][k] ? '' : 'blackAlpha.600'}
 											className={grid[i][k] ? 'glow1' : 'test'}
 										/>
