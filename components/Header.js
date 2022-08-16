@@ -98,13 +98,12 @@ export default function Header() {
 									{isOpen ? 'ect.' : 'ect.'}
 								</MenuButton>
 								<MenuList>
-									<MenuItem>
-										<Link href='/about'>About me</Link>
-									</MenuItem>
-
-									<MenuItem>
-										<Link href='/life'>Conway's Game of life</Link>
-									</MenuItem>
+									<Link href='/about'>
+										<MenuItem>About me</MenuItem>
+									</Link>
+									<Link href='/life'>
+										<MenuItem>Conway's Game of life</MenuItem>
+									</Link>
 								</MenuList>
 							</>
 						)}

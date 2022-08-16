@@ -7,7 +7,9 @@ export default function Burger() {
 			<Menu>
 				<MenuButton
 					as={IconButton}
-					backgroundColor={'black'}
+					backgroundColor={'gray.900'}
+					_hover={{ backgroundColor: 'purple.900' }}
+					_active={{ backgroundColor: 'orange.900' }}
 					icon={<HamburgerIcon />}
 					color={'white'}
 				/>

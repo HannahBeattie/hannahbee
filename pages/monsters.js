@@ -62,6 +62,26 @@ export default function Monsters() {
 				p='8'
 				// maxH='70vh'
 			>
+				<Box
+					backgroundColor={cols.ReadingContrast}
+					paddingBottom={3}
+					paddingTop={2}
+					minW={'20rem'}
+					p={5}
+				>
+					<Text>
+						Someday these critters will be playable and exist in their very own
+						video-game world. Until that day, enjoy my working progresses.
+						<br />
+						<br></br>
+						These characters exit in a world inhabited by insectoid creatures, who use
+						trash to rebuild an environment long since decimated by the great bug
+						wars...
+						<br />
+						<br></br>
+						Check back for more.
+					</Text>
+				</Box>
 				{monstUrls.map((url, idx) => (
 					<Box
 						key={`monst-${idx}`}
@@ -90,13 +110,26 @@ export default function Monsters() {
 			</>
 
 			<VStack
-				// backgroundColor={'purple'}
 				display={{ base: 'flex', md: 'none' }}
 				alignItems='stretch'
 				flex='1'
 				spacing='8'
 				pb='8'
 			>
+				<Box backgroundColor={cols.blurbrv} paddingBottom={3} paddingTop={2} p={5}>
+					<Text>
+						Someday these critters will be playable and exist in their very own
+						video-game world. Until that day, enjoy my working progresses.
+						<br />
+						<br></br>
+						These characters exit in a world inhabited by insectoid creatures, who use
+						trash to rebuild an environment long since decimated by the great bug
+						wars...
+						<br />
+						<br></br>
+						Check back for more.
+					</Text>
+				</Box>
 				{monstUrls.map((url, idx) => (
 					<Box key={`monst-${idx}`}>
 						<Image src={url} alt={`monster image number ${idx}`} />
