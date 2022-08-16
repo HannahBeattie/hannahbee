@@ -135,7 +135,7 @@ export function Cards() {
 	return (
 		<>
 			<HStack
-				backgroundColor={cols.ReadingContrast3}
+				backgroundColor={cols.chiaroscuro}
 				display={{ base: 'none', md: 'flex' }}
 				maxW='100vw'
 				w='100vw'

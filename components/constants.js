@@ -7,7 +7,7 @@ export function useThemeColors() {
 		darkhover: { color: 'cyan.600' },
 		lghthover: 'purple.900',
 		chiaroscuro: useColorModeValue('black', 'white'),
-		ReadingContrast: useColorModeValue('gray.300', 'blackAlpha.800'),
+		ReadingContrast: useColorModeValue('gray.300', 'gray.900'),
 		buttonbk: useColorModeValue('black', 'cyan.900'),
 		button: 'gray.900',
 		head: useColorModeValue('', 'blackAlpha.800'),

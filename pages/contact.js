@@ -27,7 +27,7 @@ export default function Contact() {
 				<Heading>Hello you!</Heading>
 				<br></br>
 				<Text>Here is some contact information,</Text>
-				<Text>se it wisely.</Text>
+				<Text>use it wisely.</Text>
 				<br></br>
 				<HStack spacing={'3rem'} py={'1rem'}>
 					<NextLink href='https://www.linkedin.com/in/hannah-bee-2b36aa246/' passHref>

@@ -1,8 +1,20 @@
-import { Box, Button, HStack, VStack } from '@chakra-ui/react'
+import {
+	Box,
+	Button,
+	Container,
+	HStack,
+	useColorMode,
+	useColorModeValue,
+	VStack,
+} from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-const cols = 39
-const rows = 18
+// const cols = 39
+// const rows = 18
+
+const cols = 12
+const rows = 12
+
 const randomGrid = () => {
 	const grid = []
 	for (let i = 0; i < rows; i++) {
@@ -50,26 +62,26 @@ export default function Blue() {
 							sum += g[x][y]
 						}
 					})
-					if (sum < 2 || sum > 3) {
-						return 0
+					switch (sum) {
+						case 0:
+							return 0
+						case 1:
+							return 0
+						case 2:
+							return 1
+						case 3:
+							return 0
+						case 4:
+							return 2
+						case 5:
+							return 0
+						case 6:
+							return 1
+						case 7:
+							return 0
+						default:
+							return 0
 					}
-					if (sum === 4) {
-						return 2
-					}
-					if (sum === 5) {
-						return 1
-					}
-					if (sum === 3) {
-						return 1
-					}
-					if (sum === 1) {
-						return 2
-					}
-					if (sum === 0) {
-						return 2
-					}
-
-					return g[i][j]
 				})
 			})
 			return next
@@ -78,74 +90,109 @@ export default function Blue() {
 
 	return (
 		<>
-			<HStack>
-				<Button
-					marginLeft='1rem'
-					onClick={() => {
-						setStart(!start)
-						if (!start) {
-							startRef.current = true
-						}
-						setInterval(() => {
-							runSimulation(grid)
-						}, 1000)
-					}}
-				>
-					{start ? 'Stop' : 'Start'}
-				</Button>
-				<Button marginLeft='1rem' onClick={() => setGrid(randomGrid)}>
-					Reset
-				</Button>
-			</HStack>
+			<Box
+				backgroundColor={useColorModeValue('blue.200', 'gray.800')}
+				h={'6rem'}
+				left='5rem'
+				top='0rem'
+				right='0'
+				position={'absolute'}
+			/>
 
-			<Box p={30}>
-				<motion.div
-					animate={{
-						background: ['#0BC5EA', '#805AD5', '#68D391', '#F6E05E'],
-						border: ['#0BC5EA', '#805AD5', '#68D391', '#F6E05E'],
-						color: ['#0BC5EA', '#805AD5', '#68D391', '#F6E05E'],
-						backgroundColor: ['hsl(0, 100, 50)', 'hsl(240, 100, 50)'],
-					}}
-					transition={{
-						ease: 'linear',
+			<Box
+				backgroundColor={useColorModeValue('pink.200', 'gray.800')}
+				alignSelf={'stretch'}
+				flex={1}
+			>
+				<Container paddingBottom={'5rem'}>
+					<Box p={30}>
+						<VStack spacing='0' h={'4rem'}>
+							{grid &&
+								grid.map((rows, i) => (
+									<HStack key={`row-${i}`} spacing='0'>
+										{rows.map((col, k) => (
+											<Box
+												borderRadius={grid[i][k] ? 20 : 25}
+												key={`cell-${i}-${k}`}
+												// className='neon glow '
+												w={grid[i][k] ? 4 : 3}
+												h={grid[i][k] ? 1 : 4}
+												className={grid[i][k] ? 'glow' : 'glow1'}
+												animationName='example'
+												animationDuration='2s'
+											/>
+										))}
+									</HStack>
+								))}
+						</VStack>
 
-						repeat: Infinity,
-					}}
-				>
-					<VStack spacing='0'>
-						{grid &&
-							grid.map((rows, i) => (
-								<HStack key={`row-${i}`} spacing='0'>
-									{rows.map((col, k) => (
-										<Box
-											borderRadius={grid[i][k] ? 20 : 10}
-											key={`cell-${i}-${k}`}
-											// className='neon glow '
-											w={grid[i][k] ? 2 : 3}
-											h={grid[i][k] ? 2 : 4}
-											backgroundColor={grid[i][k] ? '' : 'blackAlpha.600'}
-											className={grid[i][k] ? 'glow1' : 'test'}
-										/>
-									))}
-								</HStack>
-							))}
+						<VStack spacing='0' h={'7rem'}>
+							{grid &&
+								grid.map((rows, i) => (
+									<HStack key={`row-${i}`} spacing='0'>
+										{rows.map((col, k) => (
+											<Box
+												borderRadius={grid[i][k] ? 20 : 25}
+												key={`cell-${i}-${k}`}
+												// className='neon glow '
+												w={grid[i][k] ? 4 : 3}
+												h={grid[i][k] ? 1 : 4}
+												className={grid[i][k] ? 'test' : ''}
+												animationName='example'
+												animationDuration='2s'
+											/>
+										))}
+									</HStack>
+								))}
+						</VStack>
+
+						<VStack spacing='0' h={'2rem'} paddingBottom={'10rem'}>
+							{grid &&
+								grid.map((rows, i) => (
+									<HStack key={`row-${i}`} spacing='0'>
+										{rows.map((col, k) => (
+											<Box
+												key={`cell-${i}-${k}`}
+												// className='neon glow '
+												w={grid[i][k] ? 4 : 3}
+												h={grid[i][k] ? 1 : 4}
+												className={grid[i][k] ? 'test' : 'glow1'}
+												animationName='example'
+												animationDuration='2s'
+											/>
+										))}
+									</HStack>
+								))}
+						</VStack>
+					</Box>
+					<VStack pt={'2rem'}>
+						<HStack>
+							<Button
+								colorScheme='teal'
+								marginLeft='1rem'
+								onClick={() => {
+									setStart(!start)
+									if (!start) {
+										startRef.current = true
+									}
+									setInterval(() => {
+										runSimulation(grid)
+									}, 1000)
+								}}
+							>
+								{start ? 'Stop' : 'Start'}
+							</Button>
+							<Button
+								className='none'
+								colorScheme='teal'
+								marginLeft='1rem'
+								onClick={() => setGrid(randomGrid)}
+							>
+								Reset
+							</Button>
+						</HStack>
 					</VStack>
-					{/* <Box display='flex' flexWrap='wrap'>
-						{grid &&
-							grid.map((rows, i) =>
-								rows.map((col, k) => (
-									<Box
-										key={'idx'}
-										// className='neon glow '
-										w={5}
-										h={5}
-										backgroundColor={grid[i][k] ? '' : 'blackAlpha.600'}
-										className={grid[i][k] ? 'glow1' : 'test'}
-									/>
-								))
-							)}
-					</Box> */}
-				</motion.div>
+				</Container>
 			</Box>
 		</>
 	)

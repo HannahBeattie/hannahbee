@@ -21,6 +21,14 @@ export default function About() {
 
 	return (
 		<>
+			<Box
+				backgroundColor={useColorModeValue('black', '')}
+				h={'6rem'}
+				left='5rem'
+				top='0rem'
+				right='0'
+				position={'absolute'}
+			/>
 			<Hide below='md'>
 				<Box
 					h={{ base: '7rem', lg: '10rem' }}

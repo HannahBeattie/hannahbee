@@ -29,6 +29,7 @@ import {
 	MenuDivider,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import Burger from './Burger'
 
 export default function Header() {
 	const { colorMode, toggleColorMode } = useColorMode()
@@ -54,13 +55,15 @@ export default function Header() {
 				</Link>
 			</NextLink>
 
-			<VStack paddingLeft={'1rem'} color={cols.white}>
-				<Divider variant={'solid'} orientation='horizontal' />
-				<Text>FULLSTACK</Text>
-				<Divider variant={'solid'} orientation='horizontal' />
-				<Text>DEVELOPER</Text>
-				<Divider variant={'solid'} orientation='horizontal' />
-			</VStack>
+			<Hide below='md'>
+				<VStack paddingLeft={'1rem'} color={cols.white}>
+					<Divider variant={'solid'} orientation='horizontal' />
+					<Text>FULLSTACK</Text>
+					<Divider variant={'solid'} orientation='horizontal' />
+					<Text>DEVELOPER</Text>
+					<Divider variant={'solid'} orientation='horizontal' />
+				</VStack>
+			</Hide>
 
 			<Spacer />
 
@@ -72,7 +75,6 @@ export default function Header() {
 						</Link>
 					</NextLink>
 				</Hide>
-
 				<Hide below='md'>
 					<NextLink href='/monsters' passHref>
 						<Link _hover={{ textDecoration: null }}>
@@ -88,21 +90,26 @@ export default function Header() {
 						</Link>
 					</NextLink>
 				</Hide>
+				<Hide below='md'>
+					<Menu>
+						{({ isOpen }) => (
+							<>
+								<MenuButton color={cols.white} isActive={isOpen} as={Text}>
+									{isOpen ? 'ect.' : 'ect.'}
+								</MenuButton>
+								<MenuList>
+									<MenuItem>
+										<Link href='/about'>About me</Link>
+									</MenuItem>
 
-				<Menu>
-					{({ isOpen }) => (
-						<>
-							<MenuButton color={cols.white} isActive={isOpen} as={Text}>
-								{isOpen ? 'ect.' : 'ect.'}
-							</MenuButton>
-							<MenuList>
-								<MenuItem>
-									<LinkOverlay href='/about'>About me</LinkOverlay>
-								</MenuItem>
-							</MenuList>
-						</>
-					)}
-				</Menu>
+									<MenuItem>
+										<Link href='/life'>Conway's Game of life</Link>
+									</MenuItem>
+								</MenuList>
+							</>
+						)}
+					</Menu>
+				</Hide>
 			</HStack>
 
 			<IconButton
@@ -126,6 +133,7 @@ export default function Header() {
 					toggleColorMode()
 				}}
 			/>
+			<Burger />
 		</HStack>
 	)
 }
