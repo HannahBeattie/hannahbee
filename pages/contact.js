@@ -16,7 +16,7 @@ import ContactAnimation from '../components/ContactAnimation'
 export default function Contact() {
 	const cols = useThemeColors()
 	return (
-		<Box>
+		<Box fontWeight={useColorModeValue('500', '400')}>
 			<Box
 				backgroundColor={useColorModeValue('black', '')}
 				h={'6rem'}
@@ -41,18 +41,24 @@ export default function Contact() {
 					borderRadius='3px'
 					className='blur2 glow'
 				>
-					<Text zIndex={1} paddingBottom={'1rem'}>
-						CONTACT
+					<Text fontSize={'xl'} zIndex={1} paddingBottom={3}>
+						Contact
 					</Text>
-					<HStack zIndex={1} spacing={'4rem'} p={5}>
+					<HStack zIndex={1} spacing={'4rem'} p={2}>
 						<NextLink href='https://www.linkedin.com/in/hannah-bee-2b36aa246/' passHref>
-							<Link _hover={{ textDecoration: null }}>
+							<Link
+								_active={{ color: cols.on2 }}
+								_hover={{ textDecoration: null, color: cols.lghthover2 }}
+							>
 								<Text>Linkedin</Text>
 							</Link>
 						</NextLink>
 
 						<NextLink href='https://github.com/HannahBeattie' passHref>
-							<Link _hover={{ textDecoration: null }}>
+							<Link
+								_active={{ color: cols.on2 }}
+								_hover={{ textDecoration: null, color: cols.lghthover2 }}
+							>
 								<Text>Github</Text>
 							</Link>
 						</NextLink>
@@ -62,7 +68,12 @@ export default function Contact() {
 						href='mailto:hannybeedesign@gmail.com'
 						passHref
 					>
-						<Link paddingBottom={'2rem'} zIndex={2} _hover={{ textDecoration: null }}>
+						<Link
+							paddingBottom={3}
+							zIndex={2}
+							_active={{ color: cols.on2 }}
+							_hover={{ textDecoration: null, color: cols.lghthover2 }}
+						>
 							hannybeedesign@gmail
 						</Link>
 					</NextLink>
