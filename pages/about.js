@@ -5,7 +5,8 @@ import React from 'react'
 import { useThemeColors } from '../components/constants'
 import coder from '../public/assets/spaceDoodles/coder.png'
 import NextLink from 'next/link'
-
+import stretch from '../public/assets/spaceDoodles/stretchboi.gif'
+import planet from '../public/assets/spaceDoodles/planet.png'
 export default function About() {
 	const cols = useThemeColors()
 
@@ -76,6 +77,22 @@ export default function About() {
 					<br></br> I also have a cat. <br></br> His name is Mr. Big Stretch.
 				</Text>
 			</Container>
+			<Hide below='lg'>
+				<Box h={'7rem'} w={'7rem'} top='12rem' position={'absolute'} left={'3rem'}>
+					<Image
+						src={planet}
+						alt={'hand-drawn image of my cat attacking a tiny planet'}
+					/>
+				</Box>
+			</Hide>
+			<Hide below='md'>
+				<Box h={'15rem'} w={'15rem'} bottom='3rem' position={'absolute'} left={'3rem'}>
+					<Image
+						src={stretch}
+						alt={'hand-drawn image of my cat attacking a tiny planet'}
+					/>
+				</Box>
+			</Hide>
 		</>
 	)
 }
