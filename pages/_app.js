@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import { ChakraProvider, ColorModeScript, extendTheme, VStack } from '@chakra-ui/react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from '../components/Head+Foot/Header'
+import Footer from '../components/Head+Foot/Footer'
 
 const config = {
 	initialColorMode: 'dark',

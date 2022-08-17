@@ -1,8 +1,8 @@
 import { Box, Button, color, HStack, Icon, Link, Spacer, Text, Tooltip } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
-import linked from '../public/assets/linked.png'
-import { useThemeColors } from './constants'
+import linked from '../../public/assets/linked.png'
+import { useThemeColors } from '../constants'
 
 export default function Footer() {
 	const butht = '3rem'

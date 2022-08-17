@@ -14,9 +14,9 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import NextLink from 'next/link'
-import { useThemeColors } from './constants'
-import on from '../public/assets/spaceDoodles/on2.png'
-import off from '../public/assets/spaceDoodles/off2.png'
+import { useThemeColors } from '../constants'
+import on from '../../public/assets/spaceDoodles/on2.png'
+import off from '../../public/assets/spaceDoodles/off2.png'
 import Image from 'next/image'
 import {
 	Menu,

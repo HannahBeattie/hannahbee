@@ -11,7 +11,7 @@ import {
 import NextLink from 'next/link'
 import { React } from 'react'
 import { useThemeColors } from '../components/constants'
-import ContactAnimation from '../components/ContactAnimation'
+import ContactAnimation from '../components/contactme/ContactAnimation'
 
 export default function Contact() {
 	const cols = useThemeColors()

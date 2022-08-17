@@ -13,14 +13,14 @@ import {
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import NextLink from 'next/link'
-import house from '../public/assets/spaceDoodles/listeninghouse.png'
-import house2 from '../public/assets/spaceDoodles/house.png'
-import satalite from '../public/assets/spaceDoodles/flyingsat.png'
-import satR from '../public/assets/spaceDoodles/sataliter.png'
-import satT from '../public/assets/spaceDoodles/satalitet.png'
-import flip from '../public/assets/spaceDoodles/fliphouse.png'
+import house from '../../public/assets/spaceDoodles/listeninghouse.png'
+import house2 from '../../public/assets/spaceDoodles/house.png'
+import satalite from '../../public/assets/spaceDoodles/flyingsat.png'
+import satR from '../../public/assets/spaceDoodles/sataliter.png'
+import satT from '../../public/assets/spaceDoodles/satalitet.png'
+import flip from '../../public/assets/spaceDoodles/fliphouse.png'
 import Image from 'next/image'
-import { useThemeColors } from '../components/constants'
+import { useThemeColors } from '../constants'
 
 function ContactAnimation() {
 	const cols = useThemeColors()
