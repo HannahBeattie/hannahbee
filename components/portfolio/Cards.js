@@ -31,7 +31,7 @@ export function Cards() {
 						studios.
 						<br />I worked in close dialog with CEO Zach Tucker to create a visual brand
 						identity, logo and website aesthetic that fit the ethos and intention of the
-						company; Which is functional, minimal, playful and highly customer-focused.
+						company — functional, minimal, playful and highly customer-focused.
 						<br />
 						<br />
 						The website was a collaboration between myself and Mikey Lemmon who handled
@@ -62,7 +62,7 @@ export function Cards() {
 					</Text>
 					<br />
 					<Text fontSize={blurbsize}>
-						X-it will continue to evolve, with the collaborative effort of
+						X-it will continue to evolve, with the collaborative effort of{' '}
 						<Link href='https://mikeylemmon.com/'>Mikey Lemmon.</Link>
 					</Text>
 				</>

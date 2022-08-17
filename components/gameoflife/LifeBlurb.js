@@ -16,11 +16,11 @@ function LifeBlurb() {
 			className='blur2 '
 		>
 			<Text fontSize={'sm'} paddingBottom={3} fontWeight={400} lineHeight={7}>
-				It is said hat coding Conway’s Game of Life is a right of passage for any Dev.
+				It is said that coding Conway’s Game of Life is a right of passage for any Dev.
 				<br></br>
 				<br></br>
 				If you haven’t herd of it, Conway’s game is a <b>zero-player game; </b>A cellular
-				automation devised by British mathematician John Horton. <br></br>
+				automation devised by British mathematician John Conway. <br></br>
 				First, an initial configuration is coded and catalysed, then the ‘life’ of that
 				algorithm continues to evolve and adapt on screen without further input.
 				<br></br> <br></br>At first, I was inspired by a tutorial by{' '}
@@ -29,12 +29,11 @@ function LifeBlurb() {
 						NikValdez
 					</Link>
 				</NextLink>{' '}
-				as inspiration for an initial algorithm, which I adapted to use chakra Ui elements.
-				<br></br> I then chose to change the algorithm and explored ways I could play with
-				the cell configuration to create absurd patterns and effect; Eventually layering
-				three algorithms over one-another and toggling classNames, cell dimensions and
-				border-radiuses to create cells that alternately glowed, distorted and shifted
-				shape.
+				for an initial algorithm, which I adapted to use Chakra UI elements. I then chose to
+				change the algorithm and explored ways I could play with the cell configuration to
+				create absurd patterns and effect; Eventually layering three algorithms over
+				one-another and toggling classNames, cell dimensions and border-radii to create
+				cells that alternately glow, distort and shift shape.
 			</Text>
 		</Container>
 	)

@@ -90,6 +90,7 @@ export default function Monsters() {
 							setSelected(url)
 							onOpen()
 						}}
+						cursor='pointer'
 					>
 						<Image src={url} alt={`monster image number ${idx}`} />
 					</Box>
@@ -98,9 +99,9 @@ export default function Monsters() {
 			<>
 				<Modal isOpen={isOpen} onClose={onClose}>
 					<ModalOverlay />
-					<ModalContent>
+					<ModalContent p='0'>
 						<ModalCloseButton color={'white'} />
-						<ModalBody>
+						<ModalBody p='0'>
 							<Box minW={'20rem'} onClick={onOpen}>
 								<Image src={selected} alt={`an image of a monster`} />
 							</Box>
