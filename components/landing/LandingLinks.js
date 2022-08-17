@@ -45,7 +45,7 @@ export default function LandingLinks() {
 					justifyContent={'center'}
 					alignItems={'center'}
 					transform='rotate(-10deg)'
-					w='30rem'
+					w={{ base: '20rem', md: '30rem' }}
 				>
 					<Appear />
 				</Box>
