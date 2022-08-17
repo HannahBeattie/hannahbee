@@ -1,12 +1,31 @@
-import { Box, Container, Heading, Hide, Link, Text, useColorModeValue } from '@chakra-ui/react'
+import {
+	Box,
+	Container,
+	Heading,
+	Hide,
+	Image,
+	Link,
+	Text,
+	useColorModeValue,
+} from '@chakra-ui/react'
 
-import Image from 'next/image'
+import NextImage from 'next/image'
 import React from 'react'
 import { useThemeColors } from '../components/constants'
 import coder from '../public/assets/spaceDoodles/coder.png'
 import NextLink from 'next/link'
 import stretch from '../public/assets/spaceDoodles/stretchboi.gif'
 import planet from '../public/assets/spaceDoodles/planet.png'
+import ContactAnimation from '../components/contactme/ContactAnimation'
+
+const textProps = {
+	fontSize: 'sm',
+	lineHeight: 2,
+	// position: 'center',
+	paddingX: 5,
+	fontWeight: 500,
+}
+
 export default function About() {
 	const cols = useThemeColors()
 
@@ -20,34 +39,41 @@ export default function About() {
 				right='0'
 				position={'absolute'}
 			/>
-			<Hide below='md'>
-				<Box
-					h={{ base: '7rem', lg: '10rem' }}
-					w={{ base: '7rem', lg: '10rem' }}
-					right={{ base: '0rem', lg: '4rem' }}
-					top='8rem'
-					position={'fixed'}
-				>
-					<Image src={coder} alt='astronaut' />
-				</Box>
-			</Hide>
-			<Container backgroundColor={useColorModeValue('gray.300', 'black')} paddingBottom={35}>
+			<Container
+				backgroundColor={useColorModeValue('gray.300', 'gray.700')}
+				paddingBottom={35}
+				pb='16rem'
+			>
 				<Heading textAlign={'center'} paddingTop={35}>
 					Hello.
 				</Heading>
-				<Text
-					fontSize={'sm'}
-					lineHeight={2}
-					position={'center'}
-					paddingX={5}
-					fontWeight={500}
-				>
-					<br></br>I am Hannah Bee from Wellington New Zealand.<br></br>I began my journey
-					as a dev in April of 2022 after dabbling in illustration, writing, photography
-					and graphic design for years.<br></br>I graduated from Dev Academy bootcamp in
-					July 2022 and since then have been continuing to explore what I enjoy most about
-					coding. <br></br>
-					<br></br>In my spare time I{' '}
+				{/* <Box p='8' bg='purple' float='right' /> */}
+				<Text mt='3rem' {...textProps}>
+					{/* <Box
+						h={{ base: '7rem', lg: '10rem' }}
+						w={{ base: '7rem', lg: '10rem' }}
+						float='right'
+						// bg='gray.900'
+						mb='0'
+						mt={{ base: -4, md: 0 }}
+					>
+						<NextImage src={coder} alt='astronaut' />
+					</Box> */}
+					<Image
+						src={'/assets/spaceDoodles/coder.png'}
+						float='right'
+						h={{ base: '7rem', lg: '10rem' }}
+						w={{ base: '7rem', lg: '10rem' }}
+						mb='0'
+						mt={{ base: -4, md: 0 }}
+					/>
+					I am Hannah Bee from Wellington New Zealand. I began my journey as a dev in
+					April of 2022 after dabbling in illustration, writing, photography and graphic
+					design for years. I graduated from Dev Academy bootcamp in July 2022 and since
+					then have been continuing to explore what I enjoy most about coding.
+				</Text>
+				<Text mt='1rem' {...textProps}>
+					In my spare time I{' '}
 					<Link
 						textColor={'purple.500'}
 						_hover={{ textColor: 'yellow.800' }}
@@ -56,7 +82,7 @@ export default function About() {
 						act
 					</Link>{' '}
 					a little, make props, create stop-motion {''}
-					<NextLink href='https://www.youtube.com/watch?v=2QeoFsx1xp4'>
+					<NextLink href='https://www.youtube.com/watch?v=2QeoFsx1xp4' passHref>
 						<Link textColor={'purple.500'} _hover={{ textColor: 'yellow.800' }}>
 							videos
 						</Link>
@@ -77,22 +103,15 @@ export default function About() {
 					<br></br> I also have a cat. <br></br> His name is Mr. Big Stretch.
 				</Text>
 			</Container>
-			<Hide below='lg'>
-				<Box h={'7rem'} w={'7rem'} top='12rem' position={'absolute'} left={'3rem'}>
-					<Image
-						src={planet}
-						alt={'hand-drawn image of my cat attacking a tiny planet'}
-					/>
-				</Box>
-			</Hide>
-			<Hide below='md'>
-				<Box h={'15rem'} w={'15rem'} bottom='3rem' position={'absolute'} left={'3rem'}>
-					<Image
-						src={stretch}
-						alt={'hand-drawn image of my cat attacking a tiny planet'}
-					/>
-				</Box>
-			</Hide>
+			<ContactAnimation hideSat />
+			{/* <Hide below='md'> */}
+			<Box h={'15rem'} w={'15rem'} bottom='3rem' position={'absolute'} right='20%'>
+				<NextImage
+					src={stretch}
+					alt={'hand-drawn image of my cat attacking a tiny planet'}
+				/>
+			</Box>
+			{/* </Hide> */}
 		</>
 	)
 }

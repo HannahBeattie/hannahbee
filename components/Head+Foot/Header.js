@@ -1,34 +1,26 @@
 import {
 	Box,
-	Button,
 	Divider,
 	Hide,
 	HStack,
 	IconButton,
 	Link,
-	LinkOverlay,
+	Menu,
+	MenuButton,
+	MenuItem,
+	MenuList,
+	Show,
 	Spacer,
 	Text,
 	useColorMode,
 	VStack,
 } from '@chakra-ui/react'
-import React from 'react'
-import NextLink from 'next/link'
-import { useThemeColors } from '../constants'
-import on from '../../public/assets/spaceDoodles/on2.png'
-import off from '../../public/assets/spaceDoodles/off2.png'
 import Image from 'next/image'
-import {
-	Menu,
-	MenuButton,
-	MenuList,
-	MenuItem,
-	MenuItemOption,
-	MenuGroup,
-	MenuOptionGroup,
-	MenuDivider,
-} from '@chakra-ui/react'
-import { ChevronDownIcon } from '@chakra-ui/icons'
+import NextLink from 'next/link'
+import React from 'react'
+import off from '../../public/assets/spaceDoodles/off2.png'
+import on from '../../public/assets/spaceDoodles/on2.png'
+import { useThemeColors } from '../constants'
 import Burger from './Burger'
 
 export default function Header() {
@@ -94,7 +86,7 @@ export default function Header() {
 					<Menu>
 						{({ isOpen }) => (
 							<>
-								<MenuButton color={cols.white} isactive={isOpen} as={Text}>
+								<MenuButton color={cols.white} as={Text}>
 									{isOpen ? 'ect.' : 'ect.'}
 								</MenuButton>
 								<MenuList>
@@ -102,7 +94,7 @@ export default function Header() {
 										<MenuItem>About me</MenuItem>
 									</Link>
 									<Link href='/life'>
-										<MenuItem>Conway's Game of life</MenuItem>
+										<MenuItem>Conway&apos;s Game of life</MenuItem>
 									</Link>
 								</MenuList>
 							</>
