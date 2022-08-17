@@ -103,6 +103,7 @@ export default function Game() {
 				backgroundColor={useColorModeValue('purple.800', 'gray.800')}
 				alignSelf={'stretch'}
 				flex={1}
+				overflow={'hidden'}
 			>
 				<VStack paddingTop={4}>
 					<HStack>
