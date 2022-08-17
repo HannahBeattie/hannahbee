@@ -17,7 +17,6 @@ export default function Home() {
 		<Box className={styles.container}>
 			<Head>
 				<title>HannahBee</title>
-				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<LaserBeam beamOpacity={beamOpacity} />
 			<Space />

@@ -142,6 +142,7 @@ export default function Slugme() {
 				alignItems='center'
 				justifyContent='center'
 				bg={useColorModeValue('gray.400', 'purple.900')}
+				py='8'
 			>
 				<Box position='relative' onClick={nextOutfit} cursor='pointer'>
 					{Object.entries(parts).map(([name, { alt, index, path, zIndex }]) => (
@@ -154,7 +155,12 @@ export default function Slugme() {
 						/>
 					))}
 
-					<Image src={bodyUrl} alt='hand-drawn image of a naked cartoon slug' />
+					<Image
+						src={bodyUrl}
+						maxH='70vh'
+						// mt='8'
+						alt='hand-drawn image of a naked cartoon slug'
+					/>
 				</Box>
 				<Tooltip
 					label="Use the 'up', 'down', 'left' and 'right' keys

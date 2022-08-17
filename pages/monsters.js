@@ -24,6 +24,7 @@ import {
 	DrawerBody,
 	Flex,
 } from '@chakra-ui/react'
+import Head from 'next/head'
 import React, { useState } from 'react'
 import { useThemeColors } from '../components/constants'
 
@@ -41,6 +42,9 @@ export default function Monsters() {
 	const [selected, setSelected] = useState(monstUrls[0])
 	return (
 		<>
+			<Head>
+				<title>Character Design</title>
+			</Head>
 			<Box
 				backgroundColor={useColorModeValue('black', '')}
 				h={'6rem'}

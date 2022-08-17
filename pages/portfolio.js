@@ -5,6 +5,7 @@ import { useThemeColors } from '../components/constants'
 import Image from 'next/image'
 import painter from '../public/assets/spaceDoodles/painter2.png'
 import { motion } from 'framer-motion'
+import Head from 'next/head'
 
 export default function Portfolio() {
 	const cols = useThemeColors()
@@ -13,6 +14,9 @@ export default function Portfolio() {
 
 	return (
 		<>
+			<Head>
+				<title>Portfolio</title>
+			</Head>
 			<Box
 				backgroundColor={useColorModeValue('black', '')}
 				h={'6rem'}

@@ -17,6 +17,7 @@ import NextLink from 'next/link'
 import stretch from '../public/assets/spaceDoodles/stretchboi.gif'
 import planet from '../public/assets/spaceDoodles/planet.png'
 import ContactAnimation from '../components/contactme/ContactAnimation'
+import Head from 'next/head'
 
 const textProps = {
 	fontSize: 'sm',
@@ -31,6 +32,9 @@ export default function About() {
 
 	return (
 		<>
+			<Head>
+				<title>About Me</title>
+			</Head>
 			<Box
 				backgroundColor={useColorModeValue('black', '')}
 				h={'6rem'}

@@ -12,10 +12,14 @@ import {
 	AccordionIcon,
 } from '@chakra-ui/react'
 import { ArrowDownIcon, ArrowUpDownIcon, PlusSquareIcon } from '@chakra-ui/icons'
+import Head from 'next/head'
 
 export default function Life() {
 	return (
 		<>
+			<Head>
+				<title>Game of Life</title>
+			</Head>
 			<Game />
 			<Accordion allowToggle flex='1' padding={2} paddingBottom={5}>
 				<AccordionItem>
