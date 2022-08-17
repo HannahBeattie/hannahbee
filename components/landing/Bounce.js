@@ -70,7 +70,11 @@ const Bouncy = ({ size, src, height, speed }) => {
 				duration: rotDuration,
 			}}
 		>
-			<Image src={src} height={`${hh}rem`} />
+			<Image
+				alt='a series of floating objects such as planets, a sock and stars'
+				src={src}
+				height={`${hh}rem`}
+			/>
 		</motion.div>
 	)
 }

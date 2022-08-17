@@ -70,7 +70,11 @@ export const Grow = ({ size, src, height, speed }) => {
 				duration: rotDuration,
 			}}
 		>
-			<Image src={src} height={hh} />
+			<Image
+				alt='a series of floating objects such as a rock and a sock, in space'
+				src={src}
+				height={hh}
+			/>
 		</motion.div>
 	)
 }

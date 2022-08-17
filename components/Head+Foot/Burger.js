@@ -20,7 +20,7 @@ export default function Burger() {
 						<Link href='/portfolio'>Portfolio</Link>
 						<Link href='/contact'>Contact</Link>
 						<Link href='/monsters'>Monsters</Link>
-						<Link href='/life'>Conway's game</Link>
+						<Link href='/life'>Conway&apos;s game</Link>
 					</VStack>
 				</MenuList>
 			</Menu>

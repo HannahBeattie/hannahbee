@@ -21,7 +21,7 @@ export default function Life() {
 				<AccordionItem>
 					<AccordionButton>
 						<Box flex='1' textAlign='center'>
-							Conway's Game of Life
+							Conway&apos;s Game of Life
 						</Box>
 						<AccordionIcon />
 					</AccordionButton>

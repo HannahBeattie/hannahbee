@@ -47,21 +47,12 @@ export default function About() {
 				<Heading textAlign={'center'} paddingTop={35}>
 					Hello.
 				</Heading>
-				{/* <Box p='8' bg='purple' float='right' /> */}
+
 				<Text mt='3rem' {...textProps}>
-					{/* <Box
-						h={{ base: '7rem', lg: '10rem' }}
-						w={{ base: '7rem', lg: '10rem' }}
-						float='right'
-						// bg='gray.900'
-						mb='0'
-						mt={{ base: -4, md: 0 }}
-					>
-						<NextImage src={coder} alt='astronaut' />
-					</Box> */}
 					<Image
 						src={'/assets/spaceDoodles/coder.png'}
 						float='right'
+						alt='an image of me coding, as a tiny astronaut'
 						h={{ base: '7rem', lg: '10rem' }}
 						w={{ base: '7rem', lg: '10rem' }}
 						mb='0'
