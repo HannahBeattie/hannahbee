@@ -30,11 +30,17 @@ export default function About() {
 					<Image src={coder} alt='astronaut' />
 				</Box>
 			</Hide>
-			<Container backgroundColor={useColorModeValue('gray.300', 'black')}>
+			<Container backgroundColor={useColorModeValue('gray.300', 'black')} paddingBottom={35}>
 				<Heading textAlign={'center'} paddingTop={35}>
 					Hello.
 				</Heading>
-				<Text fontSize={'sm'} lineHeight={2} position={'center'} paddingX={5}>
+				<Text
+					fontSize={'sm'}
+					lineHeight={2}
+					position={'center'}
+					paddingX={5}
+					fontWeight={500}
+				>
 					<br></br>I am Hannah Bee from Wellington New Zealand.<br></br>I began my journey
 					as a dev in April of 2022 after dabbling in illustration, writing, photography
 					and graphic design for years.<br></br>I graduated from Dev Academy bootcamp in
@@ -67,9 +73,7 @@ export default function About() {
 					make people feel seen and heard and collaborate in an open and holistic way that
 					empowers others to see their vision come to life.
 					<br></br>
-					<br></br> I also have a cat. <br></br> His name is mr. Big Stretch. <br></br>He
-					is the worst. <br></br>
-					<br></br>
+					<br></br> I also have a cat. <br></br> His name is Mr. Big Stretch.
 				</Text>
 			</Container>
 		</>
